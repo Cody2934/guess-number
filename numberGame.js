@@ -21,15 +21,15 @@ submitButton.addEventListener('click', () => {
         box.textContent = 'YAY! You Won!';
     }
     if (compareFunction (Number(userInput.value), correctNumber) === 1) {
-        box.textContent = 'Too High';
+        box.textContent = 'Your Guess is Too High';
     }
     if (compareFunction (Number(userInput.value), correctNumber) === -1) {
-        box.textContent = 'Too Low';
+        box.textContent = 'Your Guess is Too Low';
     }
     if (tries === 0 && compareFunction(Number(userInput.Value), correctNumber) !== 0) {
         submitButton.disabled = true;
         lostDisplay.classList.remove('hidden');
-        box.textContent = 'HAHA You Lost!';
+        box.textContent = 'Oh No You Lost!';
     }
 });
 
