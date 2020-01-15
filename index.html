@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="guessing-game.css">
+    <title>Let's guess some numbers</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Wanna play a game?</h1>
+    </header>
+
+    <section>
+        <p id="intro">You've decided to play the number guessing game. Congratulations!!! It's super easy to learn but hard to master. Guess a number between 1 & 20. It's that simple. Think you can master this game???</p>
+    </section>
+
+    <section>
+        <input type="number" id="enter-guess" min="1" max="20">
+        <button id="button">Submit your Guess</button>
+
+        <p>How many tries are remaining: <span id="tries-remaining">4</span></p>
+        
+        <p span id="box"><span></span></p>
+        
+        <p class="hidden"></p><span id="winDisplay"></span></p>
+        
+        <p class="hidden"></p><span id="lostDisplay"></span>
+    </section>
+    
+    <script type="module" src="numberGame.js"></script>
+</body>
+
+</html>
