@@ -15,6 +15,7 @@ const correctNumber = Math.round(Math.random() * 20) + 1;
 submitButton.addEventListener('click', () => {
     let userGuess = Number(userInput.value);
     validGuess(userGuess);
+    if (userGuess > 20 || userGuess < 1) return;
     tries--;
     triesRemaining.textContent = tries;
     if (compareFunction (userGuess, correctNumber) === 0) {
@@ -43,8 +44,6 @@ function validGuess(userInput) {
     if (userInput > 20 || userInput < 1) {
         alert('You must choose a number between 1 and 20!')
         tries++;
-        //attn: Kamran - throws an error. attempting to remove all box.textContent messages when out of guess range.
-        !box.textContent.classList.add('hidden');
     }
 
 };
