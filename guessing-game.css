@@ -1,0 +1,45 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2015/11/10/08/22/pay-1036469__480.jpg");
+    background-color: #cccccc;
+}
+
+div {
+    width: 400px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, #FFFFFF 0%, #8B94EA 50%, #751728 100%);
+    background: -webkit-linear-gradient(left, #FFFFFF 0%, #8B94EA 50%, #751728 100%);
+    background: linear-gradient(to right, #FFFFFF 0%, #8B94EA 50%, #751728 100%);
+}
+
+#intro {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#button {
+    color: rgb(255, 244, 59); 
+    font-size: 14px; 
+    line-height: 18px; 
+    padding: 5px; 
+    border-radius: 22px; 
+    font-family: Georgia, serif; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: radial-gradient(at center center, rgb(17, 17, 7) 0%, rgb(203, 46, 27) 40%, rgb(0, 0, 0) 100%); 
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; 
+    border: 2px outset rgb(28, 110, 164); 
+    display: inline-block;
+}
+
+.hidden {
+    display: none;
+}
+
+input:invalid+span:after {
+    content: 'x';
+}
