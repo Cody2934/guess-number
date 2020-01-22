@@ -9,29 +9,42 @@ const lostDisplay = document.getElementById('lostDisplay');
 
 let tries = 4;
 
-const correctNumber = Math.round(Math.random() * 20) ;
+const correctNumber = Math.round(Math.random() * 20) + 1;
 
 
 submitButton.addEventListener('click', () => {
+    let userGuess = Number(userInput.value);
+    validGuess(userGuess);
+    if (userGuess > 20 || userGuess < 1) return;
     tries--;
     triesRemaining.textContent = tries;
-    if (compareFunction(Number(userInput.value), correctNumber) === 0) {
+    if (compareFunction (userGuess, correctNumber) === 0) {
         submitButton.disabled = true;
         winDisplay.classList.remove('hidden');
         box.textContent = 'YAY! You Won!';
     }
-    if (compareFunction (Number(userInput.value), correctNumber) === 1) {
+    if (compareFunction (userGuess, correctNumber) === 1) {
         box.textContent = 'Your Guess is Too High';
     }
-    if (compareFunction (Number(userInput.value), correctNumber) === -1) {
+    if (compareFunction (userGuess, correctNumber) === -1) {
         box.textContent = 'Your Guess is Too Low';
     }
-    if (tries === 0 && compareFunction(Number(userInput.Value), correctNumber) !== 0) {
+    if (tries === 0 && compareFunction (userGuess, correctNumber) === 0) {
+        submitButton.disabled = true;
+        winDisplay.classList.remove('hidden');
+        box.textContent = 'YAY, You Won!';
+    } else if (tries === 0) {
         submitButton.disabled = true;
         lostDisplay.classList.remove('hidden');
         box.textContent = 'Oh No You Lost!';
     }
 });
 
+function validGuess(userInput) {
+    if (userInput > 20 || userInput < 1) {
+        alert('You must choose a number between 1 and 20!')
+        tries++;
+    }
 
+};
 
